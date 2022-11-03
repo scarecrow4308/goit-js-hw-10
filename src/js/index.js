@@ -40,7 +40,7 @@ const fetchingFunc = e => {
           .querySelector('.country-list')
           .insertAdjacentHTML('beforeend', countryListItem(result));
 
-        if (result.length > 5) {
+        if (result.length > 10) {
           clearField();
 
           Notiflix.Notify.warning(
@@ -59,15 +59,6 @@ const fetchingFunc = e => {
 
         document.querySelector('.country-info').innerHTML =
           countryCard(newCountry);
-
-        return;
-      }
-      if (target.value.length === 1) {
-        clearField();
-
-        Notiflix.Notify.warning(
-          'Too many maches found. Please enter a more specific name.'
-        );
 
         return;
       }
